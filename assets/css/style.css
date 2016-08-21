@@ -1,0 +1,72 @@
+body{
+	background: url("https://media.starwars.ea.com/content/starwars-ea-com/en_US/starwars/battlefront/news-articles/collect-iconic-heroes-and-dominate-the-universe-in-star-wars-gal/_jcr_content/featuredImage/renditions/rendition1.img.jpg");
+}
+.container{
+		position:absolute;
+		width:80%;
+		left:10%;
+}
+h1{
+	color:white;
+	float:right;
+}
+h2{
+	color: white;
+}
+.display{
+	float:left;
+	height:600px;
+	width:800px;
+	position:relative;
+	margin-top:20%;
+}
+
+img{
+	width:200px;
+	height:150px;
+	float:left
+}
+.heroes{
+	border: solid green 2px;
+	padding-top:20px;
+	padding-bottom:20px;
+	padding-left:10px;
+	padding-right:10px;
+	background-color:white;
+	margin-top:20px;
+	}
+#Character{
+	padding-bottom:200px;
+
+}
+#restart{
+	display:none;
+}
+.characters{
+	width:1200px;
+	position:absolute;
+}
+.obi-wan,
+.luke-skywalker,
+.darth-sidious,
+.darth-maul{
+	overflow:auto;
+	width:250px;
+	height:250px;
+	clear:none;
+	float:left;
+}
+.HP{
+	width:120px;
+	position:relative;
+	overflow:auto;
+	bottom:45px;
+	left:70px;
+}
+.name{
+	width:150px;
+	position:relative;
+	overflow:auto;
+	bottom:145px;
+	left:50px;
+}
