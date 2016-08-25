@@ -18,7 +18,7 @@ h2{
 	height:600px;
 	width:800px;
 	position:relative;
-	margin-top:20%;
+	margin-top:18%;
 }
 
 img{
@@ -39,7 +39,8 @@ img{
 	padding-bottom:200px;
 
 }
-#restart{
+#restart,
+#attack{
 	display:none;
 }
 .characters{
@@ -55,6 +56,7 @@ img{
 	height:250px;
 	clear:none;
 	float:left;
+	position:relative;
 }
 .HP{
 	width:120px;
@@ -69,4 +71,23 @@ img{
 	overflow:auto;
 	bottom:145px;
 	left:50px;
+}
+.yourCharacter{
+	height:230px;
+	margin-top:0px;
+}
+#Character{
+	display:inline;
+	}
+.defender{
+	height:230px;
+}
+.enemiesAvailable{
+	height:230px;
+	display:none;
+}
+.stats{
+	float:right;
+	color:white;
+	font-size:24px;
 }
