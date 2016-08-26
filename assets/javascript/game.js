@@ -1,5 +1,6 @@
 //variables: HP, attack power, enemies left
 $(document).ready(function(){
+var clonedDiv = $(".characters").clone();
 var myCharacter;
 var myHP;
 var myAttackPower;
@@ -79,7 +80,7 @@ console.log(enemiesLeft+" enemies remaining");
 			enemiesLeft = numberOfEnemies
 			myHP = myHP - enemyAttackPower;
 			enemyHP = enemyHP - myAttackPower;
-			myAttackPower = myAttackPower*2;
+			myAttackPower = myAttackPower+10;
 			switch(myCharacter){
 			case "Obi-Wan Kenobi":
 			$(".first").html(myHP);;
@@ -109,13 +110,14 @@ console.log(enemiesLeft+" enemies remaining");
 			console.log("my attack power is: "+myAttackPower+" and my enemy attack power is: "+enemyAttackPower);
 			console.log("my HP is: "+ myHP+" and the enemy HP is: "+enemyHP);
 			console.log(enemiesLeft+" enemies remaining");
+
 	
-	if  (myHP < 0 && enemyHP >0) {
+	if (myHP<0) {
 			$(".stats").html("You lost!")
 			$("#restart").show();
 			$("#attack").hide();
-		}
-	else if (enemyHP<=0 && enemiesLeft>0) {
+	}
+	 else if (enemyHP<=0 && enemiesLeft>0) {
 			$(".stats").html("Choose your next enemy.")
 			$(".enemiesAvailable").show();
 			$(".characters").appendTo(".enemiesAvailable");
@@ -123,12 +125,14 @@ console.log(enemiesLeft+" enemies remaining");
 			numberOfEnemies--;
 			$("#attack").hide();
 		}
-	else if (enemiesLeft = 0 && myHP >=0) {
+	else if (enemiesLeft<=0 && enemyHP<0)  {
 			$(".stats").html("You won!");
 			$("#restart").show();
 			$("#attack").hide();
-		}	
-	});	
+		} 
+	
+});		
+	
 
 //if you die, game over and restart button appear
 //if you win, choose between the rest 2 enemies, animate, set HP and attach power, repeat
@@ -140,18 +144,22 @@ myCharacter = undefined;
 myHP = undefined;
 myAttackPower = undefined;
 enemy = undefined;
-enemiesLeft = undefined;
 enemyHP = undefined;
 enemyAttackPower = undefined;
-enemiesLeft = 2;
+enemiesLeft = undefined;
+numberOfEnemies = 2;
 
-$(".frame").appendTo(".characters");
+
+$(".characters").append(clonedDiv);
+$(".yourCharacter").empty();
+$(".defender").empty();
 $(".frame").on( "mouseover", function() {
  		 $( ".heroes",this ).css( "background-color", "green");
 });
 $(".frame").on( "mouseout", function() {
  		 $( ".heroes",this ).css( "background-color", "white");
 });
+$(".stats").html("Open console to see stats of battle.");
 });
 
 
