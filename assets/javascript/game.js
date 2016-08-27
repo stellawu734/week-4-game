@@ -1,6 +1,4 @@
 //variables: HP, attack power, enemies left
-$(document).ready(function(){
-var clonedDiv = $(".characters").clone();
 var myCharacter;
 var myHP;
 var myAttackPower;
@@ -9,6 +7,9 @@ var enemyHP;
 var enemyAttackPower;
 var enemiesLeft;
 var numberOfEnemies = 2;
+var clonedDiv = $(".frame").clone(true);
+$(document).ready(function(){
+
 $(".frame").on( "mouseover", function() {
  		 $( ".heroes",this ).css( "background-color", "green");
 });
@@ -149,7 +150,7 @@ enemyAttackPower = undefined;
 enemiesLeft = undefined;
 numberOfEnemies = 2;
 
-
+$(".characters").empty();
 $(".characters").append(clonedDiv);
 $(".yourCharacter").empty();
 $(".defender").empty();
