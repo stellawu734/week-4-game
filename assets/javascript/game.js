@@ -7,7 +7,7 @@ var enemyHP;
 var enemyAttackPower;
 var enemiesLeft;
 var numberOfEnemies = 2;
-var clonedDiv = $(".frame").clone(true);
+var clonedDiv = $(".frame").clone(true,true);
 $(document).ready(function(){
 
 $(".frame").on( "mouseover", function() {
@@ -63,7 +63,7 @@ $(".frame").on('click', function() {
 			case "Darth Maul":
 			enemyAttackPower = 10;
 		}
-		$(this).appendTo(".defender");
+		$(this).prependTo(".defender");
 		$(".enemiesAvailable").css("display","none");
 		$(".characters").appendTo(".container");
 		$(".heroes").css("background-color","white");
@@ -122,7 +122,7 @@ console.log(enemiesLeft+" enemies remaining");
 			$(".stats").html("Choose your next enemy.")
 			$(".enemiesAvailable").show();
 			$(".characters").appendTo(".enemiesAvailable");
-			$(".defender").empty();
+			
 			numberOfEnemies--;
 			$("#attack").hide();
 		}
@@ -150,10 +150,15 @@ enemyAttackPower = undefined;
 enemiesLeft = undefined;
 numberOfEnemies = 2;
 
-$(".characters").empty();
-$(".characters").append(clonedDiv);
+$(".first").html(120);
+$(".second").html(100);
+$(".third").html(150);
+$(".fourth").html(180);
+$(".frame").appendTo(".characters");
 $(".yourCharacter").empty();
 $(".defender").empty();
+$("#restart").hide();
+$(".attack").hide();
 $(".frame").on( "mouseover", function() {
  		 $( ".heroes",this ).css( "background-color", "green");
 });
